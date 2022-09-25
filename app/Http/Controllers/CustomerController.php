@@ -46,7 +46,7 @@ class CustomerController extends Controller
             $body = $response->getBody();
             $res = json_decode($body, true);
             $results = $res["results"][0];
-dd($results);
+
             $address = $results['address1'] . $results['address2'] . $results['address3'];
         } catch (\Throwable $th) {
             $address = null;
