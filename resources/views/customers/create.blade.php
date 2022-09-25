@@ -30,11 +30,11 @@
         </div>
         <div>
             <label for="postcode">郵便番号</label>
-            <input type="text" name="postcode" id="postcode" value="{{ old('postcode') }}">
+            <input type="text" name="postcode" id="postcode" value="{{ old('postcode',$postcode) }}">
         </div>
         <div>
             <label for="address">住所</label>
-            <textarea name="address" id="address" cols="30" rows="10" value="{{ old('address') }}"></textarea>
+            <textarea name="address" id="address" cols="30" rows="10" value="">{{ old('address',$address) }}</textarea>
         </div>
         <div>
             <label for="number">電話番号</label>

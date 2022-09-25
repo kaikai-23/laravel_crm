@@ -17,7 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//resourseにはpostcodeアクションは含まれてないので下記を追加しなければならない。route:listのときの->nameをしてしてあげる。
+//また順番showがパラメータを受けているため、Route::resourceよりも上にかかないといけない
+Route::get ('/customers/postcode', [App\Http\Controllers\CustomerController::class, 'postcode'])->name('customers.postcode');
+
 Route::resource('customers',  App\Http\Controllers\CustomerController::class);
 
-//resourseにはpostcodeアクションは含まれてないので下記を追加しなければならない。route:listのときの->nameをしてしてあげる。
-Route::get ('/customers/postcode', [App\Http\Controllers\CustomerController::class, 'postcode'])->name('customers.postcode');
+
