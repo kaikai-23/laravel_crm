@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+.error{
+    color: red;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: solid 1px #333;
+}
