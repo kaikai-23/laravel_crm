@@ -25,5 +25,6 @@
             @endforeach
             </tr>
     </table>
-    <button type="button" onclick="location.href='{{ route('customers.postcode') }}'">新規作成</button>
+    <!--実際はpostcodeへ飛ばすが一旦createで作ってみる-->
+    <button type="button" onclick="location.href='customers/create'">新規作成</button>
 @endsection

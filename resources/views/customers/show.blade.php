@@ -22,8 +22,13 @@
                 <td>{{ $customer->number }}</td>
         </tr>
     </table>
-    <!--以下にミスがある-->
-    <button type="button" onclick="location.href='{{ route('customers.edit')}}'">編集画面</button><br>
-    <button type="button" onclick="location.href='{{ route('customers.destoroy') }}'">削除する</button><br>
+    <!--以下にミスがある、引数を渡してあげないとあかん-->
+    <button type="button" onclick="location.href='{{ route('customers.edit', $customer->id),}}'">編集画面</button><br>
+    <form action="{{ route('customers.destroy', $customer->id) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false}">
+    </form>
+
     <button type="button" onclick="location.href='{{ route('customers.index') }}'">一覧へ戻る</button>
 @endsection

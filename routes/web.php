@@ -19,5 +19,5 @@ Route::get('/', function () {
 
 Route::resource('customers',  App\Http\Controllers\CustomerController::class);
 
-//resourseにはpostcodeアクションは含まれてないので下記を追加しなければならない。
-Route::get ('/controller/customers/postcode', [App\Http\Controllers\CustomerController::class, 'postcode'])->name('customers.postcode');
+//resourseにはpostcodeアクションは含まれてないので下記を追加しなければならない。route:listのときの->nameをしてしてあげる。
+Route::get ('/customers/postcode', [App\Http\Controllers\CustomerController::class, 'postcode'])->name('customers.postcode');
