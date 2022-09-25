@@ -41,11 +41,12 @@ class CustomerController extends Controller
         //try catch文でエラー処理を書く
         try {
             //データを取得し、JSON形式からPHPの変数に変換
+
             $response = $client->request($method, $url);
             $body = $response->getBody();
             $res = json_decode($body, true);
             $results = $res["results"][0];
-
+dd($results);
             $address = $results['address1'] . $results['address2'] . $results['address3'];
         } catch (\Throwable $th) {
             $address = null;
